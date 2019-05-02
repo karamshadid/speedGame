@@ -7,8 +7,8 @@ class Footer extends Component {
   render() {
     return (
       <div className = "Footer" >
-<button type="button" className="first" name="button" onclick="pickNext()">Start Game</button>
-<button type="button" className="second" name="button" onclick="end()">End Game</button>
+<button >Start Game</button>
+<button  onClick={this.props.mybutton}>End Game</button>
 
 
     </div>

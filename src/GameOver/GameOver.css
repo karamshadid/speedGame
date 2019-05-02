@@ -1,0 +1,21 @@
+.gameoverbox {
+  width: 500px;
+  height: 150px;
+  background: rgb(205, 233, 202);
+  margin: 0 auto;
+  position: relative;
+}
+
+p {
+  padding: 20px;
+}
+
+button {
+  position: relative;
+  width: 15%;
+}
+
+#close {
+  position: relative;
+  bottom: 150px;
+}
