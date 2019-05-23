@@ -15,14 +15,20 @@ class App extends Component {
 state={         //current and score are officail states//
 current: 0,
 score: 0,
-showGameOver : false
+showGameOver : false,
+moves : 0
 };
 
 pace= 1500; //pace is not a state so has to be declared outside class//
 timer = undefined;
 
 
+
 pickNext = () => {
+  if(this.state.moves>=5){
+    this.gameOverHandler();
+    return;
+  }
 
   let nextActive = undefined;
 do{
@@ -32,6 +38,12 @@ do{
 this.setState({
   current:nextActive
 });
+this.setState(prevState =>{
+  return{
+    moves:prevState.moves + 1
+  };
+});
+
 this.pace*=0.95;
 this.timer = setTimeout(this.pickNext.bind(this),this.pace);
 }
@@ -47,6 +59,10 @@ this.pickNext();
       this.gameOverHandler();
       return;
     }
+    this.setState({
+      moves:0
+    });
+
 this.setState(prevState =>{
   return{
     score:prevState.score + 1

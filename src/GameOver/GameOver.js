@@ -18,8 +18,8 @@ return(
 <button id="close" onClick={this.closeHandler}>Close</button>
    </div>
   </div>
-
   );
- }
 }
+}
+
 export default GameOver;
